@@ -9,7 +9,7 @@ if [ -z $MEM_LIMIT ]; then
 fi
 
 phpcs --version
-whereis phpcs
+where phpcs
 
 cp /action/problem-matcher.json /github/workflow/problem-matcher.json
 
