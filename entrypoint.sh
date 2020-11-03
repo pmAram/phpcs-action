@@ -8,6 +8,9 @@ if [ -z $MEM_LIMIT ]; then
   MEM_LIMIT=512M
 fi
 
+phpcs -v
+whereis phpcs
+
 cp /action/problem-matcher.json /github/workflow/problem-matcher.json
 
 echo "::add-matcher::${RUNNER_TEMP}/_github_workflow/problem-matcher.json"
