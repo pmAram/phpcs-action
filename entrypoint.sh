@@ -8,7 +8,7 @@ if [ -z $MEM_LIMIT ]; then
   MEM_LIMIT=512M
 fi
 
-phpcs -v
+phpcs --version
 whereis phpcs
 
 cp /action/problem-matcher.json /github/workflow/problem-matcher.json
