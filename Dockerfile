@@ -8,6 +8,10 @@ RUN cd /usr/local/lib/php/PHP/CodeSniffer/Standards/ && git clone git://github.c
 
 RUN apt-get install -y jq
 
+COPY entrypoint.sh \
+     problem-matcher.json \
+     /action/
+
 RUN chmod +x /action/entrypoint.sh
 
 ENTRYPOINT ["/action/entrypoint.sh"]
