@@ -40,9 +40,9 @@ else
 fi
 
 if [ "${USE_CHANGED_FILES}" = "true" ]; then
-    echo "${CHANGED_FILES}" | xargs -rt ${INPUT_PHPCS_BIN_PATH} -d memory_limit=$MEM_LIMIT --standard=$STANDARD ${ENABLE_WARNINGS_FLAG} --report=checkstyle
+    echo "${CHANGED_FILES}" | xargs -rt ${INPUT_PHPCS_BIN_PATH} --standard=$STANDARD ${ENABLE_WARNINGS_FLAG} --report=checkstyle
 else
-    ${INPUT_PHPCS_BIN_PATH} -d memory_limit=$MEM_LIMIT --standard=$STANDARD ${ENABLE_WARNINGS_FLAG} --report=checkstyle
+    ${INPUT_PHPCS_BIN_PATH} --standard=$STANDARD ${ENABLE_WARNINGS_FLAG} --report=checkstyle
 fi
 
 status=$?
