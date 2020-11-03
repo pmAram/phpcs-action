@@ -6,7 +6,7 @@ RUN apt-get update && \
 RUN pear install PHP_CodeSniffer-2.9.0
 RUN cd /usr/local/lib/php/PHP/CodeSniffer/Standards/ && git clone git://github.com/ludofleury/symfony-coding-standard.git Symfony
 
-RUN apk add --no-cache jq
+RUN apt-get install -y jq
 
 RUN chmod +x /action/entrypoint.sh
 
