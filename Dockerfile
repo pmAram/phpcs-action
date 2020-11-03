@@ -1,8 +1,12 @@
-FROM cytopia/phpcs:3
+FROM php:7.2-cli
 
-COPY entrypoint.sh \
-     problem-matcher.json \
-     /action/
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
+RUN pear install PHP_CodeSniffer-2.9.0
+RUN cd /usr/local/lib/php/PHP/CodeSniffer/Standards/ && git clone git://github.com/ludofleury/symfony-coding-standard.git Symfony
+
+RUN apk add --no-cache jq
 
 RUN chmod +x /action/entrypoint.sh
 
